@@ -1,0 +1,170 @@
+
+<!DOCTYPE HTML>
+<html lang="en-US"><head><script src="/Auth/static/111213/js/perf/stub.js" type="text/javascript"></script><script src="/Auth/faces/a4j/g/3_3_3.Finalorg.ajax4jsf.javascript.AjaxScript?rel=1761681065000" type="text/javascript"></script><script src="/Auth/jslibrary/1752551382258/ui-sfdc-javascript-impl/SfdcCore.js" type="text/javascript"></script><script src="/Auth/jslibrary/1746634855258/sfdc/IframeThirdPartyContextLogging.js" type="text/javascript"></script><script src="/Auth/static/111213/js/picklist4.js" type="text/javascript"></script><script src="/Auth/jslibrary/1686615502258/sfdc/VFState.js" type="text/javascript"></script><script src="/Auth/jslibrary/1647410351258/sfdc/NetworkTracking.js" type="text/javascript"></script><script>try{ NetworkTracking.init('/Auth/_ui/networks/tracking/NetworkTrackingServlet', 'network', '066580000038uwB'); }catch(x){}</script><script>(function(UITheme) {
+    UITheme.getUITheme = function() { 
+        return UserContext.uiTheme;
+    };
+}(window.UITheme = window.UITheme || {}));</script></head><body>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        
+        .popupBackground {
+        /* Background color */
+        background-color:black;
+        opacity: 0.20;
+        filter: alpha(opacity = 20);
+        
+        /* Dimensions */
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 998;
+        position: absolute;
+        }
+        
+        /* This is for the message DIV */
+        .PopupPanel {
+        /* Background color */
+        /*border: solid 2px #00205B;
+        background-color: white;
+        */
+        /* Dimensions */
+        left: 50%;
+        width: 100px;
+        //margin-left: -100px;
+        border-radius: 15px
+        top: 50%;
+        height: 100px;
+        margin-top: 200px;
+        z-index: 999;
+        position: fixed;
+        }
+        .header {
+            background: #00A9A9;
+            color: #fff;
+            padding: 5px 10px;
+            margin: 15px 0;
+        }
+        form {
+            padding: 0 15px;
+        }
+        .form-control {
+            margin: 0 5px;
+            border-radius: 0;
+        }
+        .alert {
+            border-radius : 0;
+        }
+        input[type='submit'] {  margin: 0;  }
+        #pdfjsframe {height: 1500px;}
+        .btn-primary{
+            background: #00A9A9;
+            border-color: #00A9A9;
+        }
+        .btn-primary:hover{
+            background: #00A9A9;
+            border-color: #00A9A9;
+        }
+    </style>
+    <script>
+        var pdfTimeOutId,
+                pdf_base64Str = '';
+        console.log('');
+        contentType = '';
+        function base64ToUint8Array(base64) {
+            var raw = atob(base64);
+            var uint8Array = new Uint8Array(raw.length);
+            for (var i = 0; i < raw.length; i++) {
+                uint8Array[i] = raw.charCodeAt(i);
+            }
+            return uint8Array;
+        }
+        function b64toBlob(b64Data, contentType) {
+            contentType = contentType || '';
+            var sliceSize = 512;
+            b64Data = b64Data.replace(/^[^,]+,/, '');
+            b64Data = b64Data.replace(/\s/g, '');
+            var byteCharacters = window.atob(b64Data);
+            var byteArrays = [];
+        
+            for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+                var slice = byteCharacters.slice(offset, offset + sliceSize);
+        
+                var byteNumbers = new Array(slice.length);
+                for (var i = 0; i < slice.length; i++) {
+                    byteNumbers[i] = slice.charCodeAt(i);
+                }
+        
+                var byteArray = new Uint8Array(byteNumbers);
+        
+                byteArrays.push(byteArray);
+            }
+        
+            var blob = new Blob(byteArrays, {type: contentType});
+            return blob;
+        }
+
+
+        function loadPdf(){
+
+            if(!false){//IsValid Blob
+                var IsValidBlob = (pdf_base64Str.length >= 0 && /^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{4}|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)$/.test(pdf_base64Str));
+                if(IsValidBlob){
+                    var pdfjsframe = document.getElementById('pdfjsframe');
+                    var data = base64ToUint8Array(pdf_base64Str);
+                    pdfjsframe.contentWindow.PDFViewerApplication.open(data);
+                    var downlink = document.getElementById('downloadlink');
+                    var blob = b64toBlob(pdf_base64Str,contentType);
+                    var blobUrl = URL.createObjectURL(blob);
+                    downlink.setAttribute('href', blobUrl );
+                    clearTimeout(pdfTimeOutId);
+                }
+                else
+                    pdfTimeOutId = setTimeout (loadPdf, 100);
+            }else{
+                //Server error
+                alert('Server has encountered an error. Please refresh the page to try again.');
+            }
+
+        }
+
+    </script><span id="VerifyDocPG:pleasewait"><span id="VerifyDocPG:pleasewait.start" style="display: none">
+            <div>
+                <div class="popupBackground"></div>
+                <div class="PopupPanel">
+                    <img src="/Auth/resource/1471849002000/LoadingImage" />
+                </div>
+            </div></span><span id="VerifyDocPG:pleasewait.stop"></span><script type="text/javascript">
+window.document.getElementById('VerifyDocPG:pleasewait.stop').onstop=function(){DisableLookUp();;};
+</script></span>
+
+    <div class="container"><span id="VerifyDocPG:j_id3">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="header">
+                    <h4>Verify Document</h4>
+                </div>
+<form id="VerifyDocPG:documentform" name="VerifyDocPG:documentform" method="post" action="https://rakez.my.salesforce-sites.com/Auth/VerifyDocument?refURL=http%3A%2F%2Frakez.my.salesforce-sites.com%2FAuth%2FVerifyDocument" class="form-inline" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="VerifyDocPG:documentform" value="VerifyDocPG:documentform" />
+
+
+                    <div class="form-group">
+                        <label class="control-label" for="docreference">Enter Document Number</label><input id="VerifyDocPG:documentform:docReference" type="text" name="VerifyDocPG:documentform:docReference" class="search-doc form-control" style="width: 300px;" placeholder="Document Reference Number" />
+                    </div>
+
+                    <div class="form-group"><input class="btn btn-primary form-control" id="VerifyDocPG:documentform:j_id7" name="VerifyDocPG:documentform:j_id7" onclick="return A4J.AJAX.Submit('VerifyDocPG:documentform',event,{'similarityGroupingId':'VerifyDocPG:documentform:j_id7','html5Validate':true,'parameters':{'VerifyDocPG:documentform:j_id7':'VerifyDocPG:documentform:j_id7'} ,'status':'VerifyDocPG:pleasewait'} );" value="Search" style="width: 200px;" type="submit" />
+                    </div><div id="VerifyDocPG:documentform:j_id21"></div>
+</form><span id="ajax-view-state-page-container" style="display: none"><span id="ajax-view-state" style="display: none"><input type="hidden"  id="com.salesforce.visualforce.ViewState" name="com.salesforce.visualforce.ViewState" value="i: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" /><input type="hidden"  id="com.salesforce.visualforce.ViewStateVersion" name="com.salesforce.visualforce.ViewStateVersion" value="202510281951050000" /><input type="hidden"  id="com.salesforce.visualforce.ViewStateMAC" name="com.salesforce.visualforce.ViewStateMAC" value="AGV5SnViMjVqWlNJNklsZGFTVmx5VkZaQlVrWkZhM0V3YVd0TWJVbzNSV2hsZDA5dlEyVm9UbVV0YnpKV01tcGtPR05TY1ZGY2RUQXdNMlFpTENKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUlzSW10cFpDSTZJbnRjSW5SY0lqcGNJakF3UkRVNE1EQXdNREF3WVUxSGQxd2lMRndpZGx3aU9sd2lNREpITlRnd01EQXdNREE1TUUxRFhDSXNYQ0poWENJNlhDSjJabk5wWjI1cGJtZHJaWGxjSWl4Y0luVmNJanBjSWpBd05UVTRNREF3TURBeVIzRnZhbHdpZlNJc0ltTnlhWFFpT2xzaWFXRjBJbDBzSW1saGRDSTZNVGMyTVRreE5qYzBORGcwTnl3aVpYaHdJam93ZlE9PS4uckFPdTZtVWgtNExMMUxqWTg5dEpNREkwVV9oajd3aHJsbmlTNFd6TnBtST0=" /></span></span>
+            </div>
+        </div></span>
+        <div class="clearfix"></div>
+        <br /><span id="VerifyDocPG:docviewer"> 
+            <script>
+                pdf_base64Str = '';
+                contentType = '';
+            </script></span>
+    </div><script type="text/javascript">Sfdc.onReady(function(){
+	SfdcApp && SfdcApp.Visualforce && SfdcApp.Visualforce.VSManager && SfdcApp.Visualforce.VSManager.vfPrepareForms(["VerifyDocPG:documentform"]);
+
+});</script></body></html>

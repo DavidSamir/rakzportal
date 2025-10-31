@@ -1,0 +1,403 @@
+{
+	"info": {
+		"_postman_id": "0fee62a2-0036-409a-a795-e42ab649accc",
+		"name": "rakes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11292903"
+	},
+	"item": [
+		{
+			"name": "rakez.my.salesforce-sites.com",
+			"item": [
+				{
+					"name": "https://rakez.my.salesforce-sites.com/Auth",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "host",
+								"value": "rakez.my.salesforce-sites.com"
+							},
+							{
+								"key": "Accept",
+								"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8"
+							},
+							{
+								"key": "Sec-GPC",
+								"value": "1"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\""
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "document"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "navigate"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "none"
+							},
+							{
+								"key": "Sec-Fetch-User",
+								"value": "?1"
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							},
+							{
+								"key": "Upgrade-Insecure-Requests",
+								"value": "1"
+							}
+						],
+						"url": {
+							"raw": "https://rakez.my.salesforce-sites.com/Auth",
+							"protocol": "https",
+							"host": [
+								"rakez",
+								"my",
+								"salesforce-sites",
+								"com"
+							],
+							"path": [
+								"Auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://rakez.my.salesforce-sites.com/Auth/VerifyDocument",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "host",
+								"value": "rakez.my.salesforce-sites.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Sec-GPC",
+								"value": "1"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\""
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded; charset=UTF-8"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-origin"
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "AJAXREQUEST",
+									"value": "_viewRoot"
+								},
+								{
+									"key": "VerifyDocPG:documentform",
+									"value": "VerifyDocPG:documentform"
+								},
+								{
+									"key": "VerifyDocPG:documentform:docReference",
+									"value": "1552515-mjVK-1qaf-75868817"
+								},
+								{
+									"key": "VerifyDocPG:documentform:j_id7",
+									"value": "VerifyDocPG:documentform:j_id7"
+								},
+								{
+									"key": "com.salesforce.visualforce.ViewState",
+									"value": "i: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"
+								},
+								{
+									"key": "com.salesforce.visualforce.ViewStateMAC",
+									"value": "AGV5SnViMjVqWlNJNklsaERSbkl5YjNWa1RVeEplbVZOVFhaR2J6WldORGN5UWtSUmNqazRaREp5VmtwRE1uaFZjemRvY21kY2RUQXdNMlFpTENKMGVYQWlPaUpLVjFRaUxDSmhiR2NpT2lKSVV6STFOaUlzSW10cFpDSTZJbnRjSW5SY0lqcGNJakF3UkRVNE1EQXdNREF3WVUxSGQxd2lMRndpZGx3aU9sd2lNREpITlRnd01EQXdNREE1TUUxRFhDSXNYQ0poWENJNlhDSjJabk5wWjI1cGJtZHJaWGxjSWl4Y0luVmNJanBjSWpBd05UVTRNREF3TURBeVIzRnZhbHdpZlNJc0ltTnlhWFFpT2xzaWFXRjBJbDBzSW1saGRDSTZNVGMyTVRreE5EZzJNekF5TXl3aVpYaHdJam93ZlE9PS4ucE9ybHY4MnlJMXNSRENZWG1HVHlXVU9YSmRFQWNGWlRkLUN0LUtlSkVSWT0="
+								},
+								{
+									"key": "com.salesforce.visualforce.ViewStateVersion",
+									"value": "202510281951050000"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://rakez.my.salesforce-sites.com/Auth/VerifyDocument?refURL=http%3A%2F%2Frakez.my.salesforce-sites.com%2FAuth",
+							"protocol": "https",
+							"host": [
+								"rakez",
+								"my",
+								"salesforce-sites",
+								"com"
+							],
+							"path": [
+								"Auth",
+								"VerifyDocument"
+							],
+							"query": [
+								{
+									"key": "refURL",
+									"value": "http%3A%2F%2Frakez.my.salesforce-sites.com%2FAuth"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://rakez.my.salesforce-sites.com/Auth/resource/{{param1}}/PDFJS/web/viewer-updated.html",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "host",
+								"value": "rakez.my.salesforce-sites.com"
+							},
+							{
+								"key": "Accept",
+								"value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8"
+							},
+							{
+								"key": "Sec-GPC",
+								"value": "1"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\""
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "iframe"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "navigate"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-origin"
+							},
+							{
+								"key": "Sec-Fetch-User",
+								"value": "?1"
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							},
+							{
+								"key": "Upgrade-Insecure-Requests",
+								"value": "1"
+							}
+						],
+						"url": {
+							"raw": "https://rakez.my.salesforce-sites.com/Auth/resource/1497517066000/PDFJS/web/viewer-updated.html",
+							"protocol": "https",
+							"host": [
+								"rakez",
+								"my",
+								"salesforce-sites",
+								"com"
+							],
+							"path": [
+								"Auth",
+								"resource",
+								"1497517066000",
+								"PDFJS",
+								"web",
+								"viewer-updated.html"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://rakez.my.salesforce-sites.com/Auth/resource/{{param1}}/PDFJS/web/locale/locale.properties",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "host",
+								"value": "rakez.my.salesforce-sites.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Sec-GPC",
+								"value": "1"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\""
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-origin"
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							}
+						],
+						"url": {
+							"raw": "https://rakez.my.salesforce-sites.com/Auth/resource/1497517066000/PDFJS/web/locale/locale.properties",
+							"protocol": "https",
+							"host": [
+								"rakez",
+								"my",
+								"salesforce-sites",
+								"com"
+							],
+							"path": [
+								"Auth",
+								"resource",
+								"1497517066000",
+								"PDFJS",
+								"web",
+								"locale",
+								"locale.properties"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://rakez.my.salesforce-sites.com/Auth/resource/{{param1}}/PDFJS/web/locale/en-GB/viewer.properties",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "host",
+								"value": "rakez.my.salesforce-sites.com"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Sec-GPC",
+								"value": "1"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Chromium\";v=\"142\", \"Brave\";v=\"142\", \"Not_A Brand\";v=\"99\""
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+							},
+							{
+								"key": "Sec-Fetch-Dest",
+								"value": "empty"
+							},
+							{
+								"key": "Sec-Fetch-Mode",
+								"value": "cors"
+							},
+							{
+								"key": "Sec-Fetch-Site",
+								"value": "same-origin"
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							}
+						],
+						"url": {
+							"raw": "https://rakez.my.salesforce-sites.com/Auth/resource/1497517066000/PDFJS/web/locale/en-GB/viewer.properties",
+							"protocol": "https",
+							"host": [
+								"rakez",
+								"my",
+								"salesforce-sites",
+								"com"
+							],
+							"path": [
+								"Auth",
+								"resource",
+								"1497517066000",
+								"PDFJS",
+								"web",
+								"locale",
+								"en-GB",
+								"viewer.properties"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
