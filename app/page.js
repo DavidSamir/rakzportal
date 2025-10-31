@@ -1,9 +1,9 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 
-export default function HomePage() {
+function HomePageInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const redirected = useRef(false);
@@ -57,5 +57,13 @@ export default function HomePage() {
         </form>
       </section>
     </main>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <Suspense fallback={null}>
+      <HomePageInner />
+    </Suspense>
   );
 }
