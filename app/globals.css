@@ -1,6 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap');
+
 :root {
   color-scheme: light;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.document-code {
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --bg-color: #ffffff;
+  --border-color: #e5e7eb;
+  --text-color: #1f2937;
+}
+
+.document-code {
+  background: var(--bg-color) !important;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.document-code h2 {
+  color: var(--text-color);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.document-code .code-display {
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  font-family: 'Cairo Mono', monospace;
+  font-size: 1rem !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--primary-color);
+}
+
+.document-code .copy-button {
+  background: var(--primary-color);
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  padding: 0.45rem 0.9rem;
+  box-shadow: 0 1px 2px rgb(15 23 42 / 0.18);
+}
+
+.document-code .copy-button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.document-code .code-chip {
+  background: #eef2ff;
+  border-color: rgba(37, 99, 235, 0.15);
+  font-size: 0.95rem !important;
+  font-weight: 600;
+  color: #1e3a8a;
+  min-width: 180px;
+  text-align: center;
+}
+
+.document-code .copy-chip {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.document-code .info-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #1f2937;
+}
+
+.document-code .info-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
+}
+
+.document-code .info-hint {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.document-code .info-divider {
+  color: #cbd5f5;
+  font-weight: 600;
+}
+
+.document-code .action-pill {
+  font-size: 0.85rem;
+  background: rgba(37, 99, 235, 0.12);
+  color: var(--primary-color);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+}
+
+.document-code .action-pill:hover {
+  background: rgba(29, 78, 216, 0.18);
+}
+
+.document-code .verify-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.document-code .verify-link:hover {
+  gap: 0.75rem;
+  color: var(--primary-hover);
+}
+
+.document-code .divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-color), transparent);
+  margin: 1.5rem 0;
+}
+
+.document-code .success-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #10b981;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  animation: slideIn 0.3s ease;
 }
 
 html,
@@ -98,7 +228,6 @@ a {
 
 .viewer {
   width: 100%;
-  max-width: 1100px;
   display: flex;
   flex-direction: column;
   gap: 20px;

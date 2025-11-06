@@ -253,10 +253,13 @@ function joinUpdates(updates) {
 }
 
 export async function GET(request, { params }) {
-  const code = params?.code;
-  if (!code) {
-    return new Response("Missing document code.", { status: 400 });
-  }
+  return new Response("PDF viewer is temporarily disabled for maintenance.", { 
+    status: 503,
+    headers: {
+      "Content-Type": "text/plain",
+      "Cache-Control": "no-store"
+    }
+  });
 
   const jar = new CookieJar();
   const client = wrapper(

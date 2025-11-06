@@ -1,4 +1,4 @@
-import CopyInstruction from "./CopyInstruction";
+import DocumentCode from './DocumentCode';
 
 export const dynamic = "force-dynamic";
 
@@ -11,26 +11,19 @@ export function generateMetadata({ params }) {
 
 export default function DocumentPage({ params }) {
   const code = params?.code || "";
-  const viewerSrc = `/api/pdf/${encodeURIComponent(code)}`;
 
   return (
     <main className="viewer">
-      <header className="viewer__header">
+      {/* <header className="viewer__header">
         <div>
           <h1>Document preview</h1>
         </div>
         <a className="viewer__link" href="/">
           Search again
         </a>
-      </header>
-      <CopyInstruction code={code} />
-      <section className="viewer__frame-wrapper">
-        <iframe
-          className="viewer__frame"
-          src={viewerSrc}
-          title={`RAKEZ document ${code}`}
-          allow="fullscreen"
-        />
+      </header> */}
+      <section className="viewer__info-wrapper" >
+        <DocumentCode code={code} />
       </section>
     </main>
   );
